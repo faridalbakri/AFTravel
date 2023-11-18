@@ -28,37 +28,83 @@ document.addEventListener("click", function (e) {
 });
 
 // destinasi detail
-const destinasiDetail = document.querySelectorAll("#destinasi-detail");
-for (let i = 0; i < destinasiDetail.length; i++) {
-  const element = destinasiDetail[i];
-}
+// const photoDetail = document.querySelector(".photo-detail");
+// const clickPhoto = document.querySelectorAll(".detail");
 
-const destinasiBtns = document.querySelectorAll(".click-detail");
-destinasiBtns.forEach((btn, i) => {
-  btn.onclick = (e) => {
-    destinasiDetail[i].style.display = "flex";
+// clickPhoto.forEach((clc) => {
+//   clc.onclick = (e) => {
+//     photoDetail.style.display = "flex";
+//     e.preventDefault();
+//   };
+// });
+const photo = document.querySelectorAll(".thumb");
+const photoDetail = document.querySelector(".photo-detail");
+const photoSrc = document.querySelector(".photo-detail img");
+
+photo.forEach((image) => {
+  image.onclick = (e) => {
+    photoDetail.style.display = "flex";
+    photoSrc.src = image.getAttribute("src");
     e.preventDefault();
   };
 });
+
+// document.querySelectorAll(".thumb").forEach((image) => {
+//   image.onclick = () => {
+//     document.querySelector(".photo-detail").style.display = "flex";
+//     document.querySelector(".photo-detail img").src = image.getAttribute("src");
+//   };
+// });
+// const imag = document.querySelector(".photo-detail .open");
+// const tumb = document.querySelector(".thumb");
+
+// photoDetail.addEventListener("click", function (e) {
+//   if (e.target.className == "thumb") {
+//     imag.src = e.target.src;
+//   }
+// });
+// const destinasiDetail = document.querySelectorAll("#destinasi-detail");
+// for (let i = 0; i < destinasiDetail.length; i++) {
+//   const element = destinasiDetail[i];
+// }
+
+// const destinasiBtns = document.querySelectorAll(".click-detail");
+// destinasiBtns.forEach((btn, i) => {
+//   btn.onclick = (e) => {
+//     destinasiDetail[i].style.display = "flex";
+//     e.preventDefault();
+//   };
+// });
 
 // click tombol close destinasi detail
-const btnsClose = document.querySelectorAll(".close-icon");
-btnsClose.forEach((cls, i) => {
-  cls.onclick = (e) => {
-    destinasiDetail[i].style.display = "none";
-    e.preventDefault();
-  };
-});
+const btnClose = document.querySelector(".close-icon");
+btnClose.onclick = (e) => {
+  photoDetail.style.display = "none";
+  e.preventDefault();
+};
+// const btnsClose = document.querySelectorAll(".close-icon");
+// btnsClose.forEach((cls, i) => {
+//   cls.onclick = (e) => {
+//     destinasiDetail[i].style.display = "none";
+//     e.preventDefault();
+//   };
+// });
 
 // click diluar destinasi detail
 window.onclick = (e) => {
-  destinasiDetail.forEach((element, i) => {
-    if (e.target === element) {
-      element.style.display = "none";
-      e.preventDefault();
-    }
-  });
+  if (e.target === photoDetail) {
+    photoDetail.style.display = "none";
+    e.preventDefault();
+  }
 };
+// window.onclick = (e) => {
+//   destinasiDetail.forEach((element, i) => {
+//     if (e.target === element) {
+//       element.style.display = "none";
+//       e.preventDefault();
+//     }
+//   });
+// };
 
 const sumbmitForm = document.querySelector("#btn");
 document.addEventListener("submit", function (e) {
