@@ -38,17 +38,27 @@ document.addEventListener("click", function (e) {
 //   };
 // });
 const photo = document.querySelectorAll(".thumb");
-const photoDetail = document.querySelector(".photo-detail");
 const photoSrc = document.querySelector(".photo-detail img");
+const photoDetail = document.querySelectorAll(".photo-detail");
+for (let i = 0; i < photoDetail.length; i++) {
+  const element = photoDetail[i];
 
-photo.forEach((image) => {
-  image.onclick = (e) => {
-    photoDetail.style.display = "flex";
-    photoSrc.src = image.getAttribute("src");
+  photo.forEach((image, i) => {
+    image.onclick = (e) => {
+      photoDetail[i].style.display = "flex";
+      photoSrc.src = image.getAttribute("src");
+      e.preventDefault();
+    };
+  });
+}
+
+const lengkap = document.querySelectorAll(".selengkapnya");
+lengkap.forEach((kap, i) => {
+  kap.onclick = (e) => {
+    photoDetail[i].style.display = "flex";
     e.preventDefault();
   };
 });
-
 // document.querySelectorAll(".thumb").forEach((image) => {
 //   image.onclick = () => {
 //     document.querySelector(".photo-detail").style.display = "flex";
@@ -77,11 +87,16 @@ photo.forEach((image) => {
 // });
 
 // click tombol close destinasi detail
-const btnClose = document.querySelector(".close-icon");
-btnClose.onclick = (e) => {
-  photoDetail.style.display = "none";
-  e.preventDefault();
-};
+const btnClose = document.querySelectorAll(".close-icon");
+for (let i = 0; i < photoDetail.length; i++) {
+  const element = photoDetail[i];
+}
+btnClose.forEach((btn, i) => {
+  btn.onclick = (e) => {
+    photoDetail[i].style.display = "none";
+    e.preventDefault();
+  };
+});
 // const btnsClose = document.querySelectorAll(".close-icon");
 // btnsClose.forEach((cls, i) => {
 //   cls.onclick = (e) => {
@@ -92,10 +107,12 @@ btnClose.onclick = (e) => {
 
 // click diluar destinasi detail
 window.onclick = (e) => {
-  if (e.target === photoDetail) {
-    photoDetail.style.display = "none";
-    e.preventDefault();
-  }
+  photoDetail.forEach((element, i) => {
+    if (e.target === element) {
+      element[i].style.display = "none";
+      e.preventDefault();
+    }
+  });
 };
 // window.onclick = (e) => {
 //   destinasiDetail.forEach((element, i) => {

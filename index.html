@@ -29,14 +29,20 @@
       <img src="img/logo.png" alt="logo" />
       <a href="#" class="navbar-logo">AF<span>Traveling</span></a>
 
-      <div class="navbar-nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#destinasi">Pulau</a>
-        <a href="#cafe">Cafe</a>
-        <a href="#perpustakaan">Perpustakaan</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <ul class="navbar-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li class="dropdown">
+          <a href="#">Place &#11206;</a>
+          <ul class="drop-down">
+            <li><a href="#destinasi">Pulau</a></li>
+            <li><a href="#cafe">Cafe</a></li>
+            <li><a href="#perpustakaan">Perpustakaan</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
       <div class="navbar-extra">
         <a href="#" id="search-btn"><i data-feather="search"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
@@ -101,9 +107,7 @@
       <h2><span>Pulau </span>Kami</h2>
       <div class="row">
         <div class="destinasi-img">
-          <a href="#" class="detail">
-            <img src="img/pulau.png" class="thumb" alt="destinasi"
-          /></a>
+          <img src="img/pulau.png" class="thumb" alt="destinasi" />
         </div>
         <div class="content">
           <h3>Kepulauan Seribu</h3>
@@ -125,6 +129,7 @@
             eksklusif dan Pulau Pantara dengan panorama pantainya yang
             memesmerizing adalah pilihan ideal untuk beristirahat.
           </p>
+          <a href="#" class="selengkapnya">Selengkapnya...</a>
         </div>
       </div>
     </section>
@@ -134,9 +139,7 @@
       <h2><span>Cafe </span>Kami</h2>
       <div class="row">
         <div class="cafe-img">
-          <a href="#" class="detail"
-            ><img src="img/cafe.png" class="thumb" alt="cafe"
-          /></a>
+          ><img src="img/cafe.png" class="thumb" alt="cafe" />
         </div>
         <div class="content">
           <h3>Humairah Coffee</h3>
@@ -158,6 +161,7 @@
             minuman ringan, dan kudapan lezat untuk memenuhi selera semua
             pengunjung.
           </p>
+          <a href="#" class="selengkapnya">Selengkapnya...</a>
         </div>
       </div>
     </section>
@@ -167,9 +171,7 @@
       <h2><span>Perpustakaan </span>Kami</h2>
       <div class="row">
         <div class="perpustakaan-img">
-          <a href="#" class="detail"
-            ><img src="img/perpustakaan.png" class="thumb" alt="perpustakaan"
-          /></a>
+          ><img src="img/perpustakaan.png" class="thumb" alt="perpustakaan" />
         </div>
         <div class="content">
           <h3>Omah Library</h3>
@@ -190,6 +192,7 @@
             hingga lokakarya menulis, kami menyediakan beragam kegiatan yang
             membangkitkan semangat literasi.
           </p>
+          <a href="#" class="selengkapnya">Selengkapnya...</a>
         </div>
       </div>
     </section>
@@ -205,30 +208,22 @@
         informasi, dan panduan yang Anda butuhkan. Jangan ragu untuk menghubungi
         kami melalui form dibawah ini :
       </p>
-      <div class="row">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.65639360383!2d106.66469813169607!3d-6.229379579963759!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1700151217889!5m2!1sid!2sid"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          class="map"></iframe>
 
-        <form action="">
-          <div class="input-group">
-            <i data-feather="user"></i>
-            <input type="text" placeholder="Nama" />
-          </div>
-          <div class="input-group">
-            <i data-feather="at-sign"></i>
-            <input type="text" placeholder="E-mail" />
-          </div>
-          <div class="input-group">
-            <i data-feather="mail"></i>
-            <input type="text" placeholder="Pesan anda..." />
-          </div>
-          <button type="submit" class="btn" id="btn">Kirim Pesan</button>
-        </form>
-      </div>
+      <form action="">
+        <div class="input-group">
+          <i data-feather="user"></i>
+          <input type="text" placeholder="Nama" />
+        </div>
+        <div class="input-group">
+          <i data-feather="at-sign"></i>
+          <input type="text" placeholder="E-mail" />
+        </div>
+        <div class="input-group">
+          <i data-feather="mail"></i>
+          <input type="text" placeholder="Pesan anda..." />
+        </div>
+        <button type="submit" class="btn" id="btn">Kirim Pesan</button>
+      </form>
     </section>
 
     <!-- Contact Section End -->
@@ -254,9 +249,132 @@
     <!-- Footer End -->
 
     <!-- Photo Detail Start -->
-    <div class="photo-detail">
-      <a href="#"><i data-feather="x" class="close-icon"></i></a>
-      <img src="img/pulau.png" class="open" alt="photo-detail" />
+    <div class="photo-detail" id="photo-detail">
+      <div class="container">
+        <a href="#"><i data-feather="x" class="close-icon"></i></a>
+        <div class="content-container">
+          <div class="image">
+            <img src="img/pulau.png" alt="destinasi" />
+          </div>
+          <div class="content-img">
+            <h4>Kepulauan Seribu</h4>
+            <p>
+              Temukan keindahan lebih dari seribu pulau yang tersebar di
+              sepanjang kepulauan ini. Setiap pulau memiliki daya tariknya
+              sendiri, mulai dari Pulau Pramuka yang kaya akan kehidupan laut
+              hingga Pulau Tidung yang terkenal dengan jembatan cinta yang
+              mempesona.
+            </p>
+            <p>
+              Snorkeling dan menyelam di Kepulauan Seribu adalah pengalaman yang
+              tak terlupakan. Terumbu karang yang indah, biota laut yang
+              beragam, dan kejernihan air laut menciptakan surga bawah laut yang
+              harus dijelajahi.
+            </p>
+            <p>
+              Rileks di tepi pantai pasir putih yang menyejukkan dan nikmati
+              matahari terbenam yang memukau. Pulau Macan dengan pantainya yang
+              eksklusif dan Pulau Pantara dengan panorama pantainya yang
+              memesmerizing adalah pilihan ideal untuk beristirahat.
+            </p>
+            <p>
+              Beberapa pulau di Kepulauan Seribu telah dijaga dan dikembangkan
+              untuk tujuan konservasi dan ekowisata. Pulau Harapan, Pulau Pari,
+              dan Pulau Pramuka menjadi tempat di mana pengunjung dapat belajar
+              tentang keanekaragaman alam dan upaya pelestarian.
+            </p>
+            <p>
+              Bersantai dengan menyewa perahu, kano, atau bersnorkeling di
+              sekitar pulau-pulau kecil. Para penggemar olahraga air juga dapat
+              menikmati kegiatan selancar angin, jet ski, dan perburuan ikan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="photo-detail" id="photo-detail">
+      <div class="container">
+        <a href="#"><i data-feather="x" class="close-icon"></i></a>
+        <div class="content-container">
+          <div class="image">
+            <img src="img/cafe.png" alt="cafe" />
+          </div>
+          <div class="content-img">
+            <h4>Humairah Coffee</h4>
+            <p>
+              Kami bangga menyajikan kopi terbaik dari biji pilihan. Dengan
+              perpaduan teknik sangrai yang tepat dan rasa yang khas, setiap
+              cangkir kopi di Caffe Humairah adalah sebuah perjalanan rasa yang
+              memikat.
+            </p>
+            <p>
+              Caffe Humairah bukan hanya destinasi kopi, tetapi juga ruang
+              hangat di mana para pelanggan dapat merasa seperti di rumah.
+              Suasana yang akrab dan dekorasi yang menenangkan menciptakan
+              lingkungan yang sempurna untuk berkumpul.
+            </p>
+            <p>
+              Nikmati variasi menu yang menggoda, dari kopi tradisional hingga
+              kreasi kopi spesial. Kami juga menyajikan berbagai pilihan teh,
+              minuman ringan, dan kudapan lezat untuk memenuhi selera semua
+              pengunjung.
+            </p>
+            <p>
+              Dengan desain interior yang nyaman dan area duduk yang luas, Caffe
+              Humairah menjadi tempat ideal untuk rapat santai, pertemuan
+              bisnis, atau sekadar bersantai sambil menikmati kopi favorit Anda.
+            </p>
+            <p>
+              Staf kami yang ramah dan profesional selalu siap melayani dengan
+              senyuman. Kami percaya bahwa pelayanan yang baik merupakan bagian
+              integral dari pengalaman pelanggan yang memuaskan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="photo-detail" id="photo-detail">
+      <div class="container">
+        <a href="#"><i data-feather="x" class="close-icon"></i></a>
+        <div class="content-container">
+          <div class="image">
+            <img src="img/perpustakaan.png" alt="perpustakaan" />
+          </div>
+          <div class="content-img">
+            <h4>Omah Library</h4>
+            <p>
+              Temukan keberagaman ilmu dan cerita di rak-rak Omah Library. Dari
+              sastra klasik hingga karya kontemporer, kami menyajikan koleksi
+              buku yang memenuhi selera dan memperkaya pengetahuan setiap
+              pengunjung.
+            </p>
+            <p>
+              Nikmati suasana tenang dan nyaman di ruangan baca Omah Library.
+              Desain interior yang hangat dan kursi-kursi yang empuk menciptakan
+              lingkungan yang ideal untuk meresapi setiap halaman buku dengan
+              kenyamanan.
+            </p>
+            <p>
+              Omah Library bukan hanya tempat membaca, tetapi juga ruang untuk
+              aktivitas literasi dan kreativitas. Dari kelompok diskusi buku
+              hingga lokakarya menulis, kami menyediakan beragam kegiatan yang
+              membangkitkan semangat literasi.
+            </p>
+            <p>
+              Jadikan Omah Library sebagai tempat untuk bertemu teman,
+              berdiskusi, atau sekadar bersantai. Dengan area duduk yang ramah
+              dan kafe yang menyajikan minuman menyegarkan, kami mengundang Anda
+              untuk menikmati momen berharga di sini.
+            </p>
+            <p>
+              Tim pustakawan dan staf Omah Library selalu siap memberikan
+              bantuan dan rekomendasi buku. Kami berkomitmen untuk menciptakan
+              pengalaman perpustakaan yang menyenangkan dan bermanfaat bagi
+              semua pengunjung.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Photo Deatail End -->
